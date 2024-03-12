@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2>Vamos a ver esa edad</h2>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="determinarEdad()">Determinar Edad</ion-button>
+  
+  <ion-card *ngIf="estado">
+    <ion-card-header>
+      Estado: {{ estado }}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Edad: {{ edad }}</ion-label>
+      <ion-img *ngIf="estado === 'joven'" src="https://thumbs.dreamstime.com/b/retrato-del-hombre-hermoso-joven-adolescente-aislado-en-el-estudio-w-90271158.jpg" style="width: 100%; height: auto;"></ion-img>
+      <ion-img *ngIf="estado === 'adulto'" src="https://thumbs.dreamstime.com/b/retrato-del-hombre-adulto-joven-feliz-30882979.jpg" style="width: 100%; height: auto;"></ion-img>
+      <ion-img *ngIf="estado === 'anciano'" src="https://img.freepik.com/foto-gratis/anciano-retrato-cara-sonriendo-cerca_53876-143237.jpg" style="width: 100%; height: auto;"></ion-img>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

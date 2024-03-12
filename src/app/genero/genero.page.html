@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>genero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2>Vamos a predecir un genero!!</h2>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="idengenero()">Predecir</ion-button>
+  
+  <ion-card *ngIf="genero">
+    <ion-card-header>
+      Género predicho: {{ genero }}
+    </ion-card-header>
+    <ion-card-content [ngStyle]="{'background-color': color}">
+      <ion-label *ngIf="genero === 'male'">Es chico</ion-label>
+      <ion-label *ngIf="genero === 'female'">Es chica</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
